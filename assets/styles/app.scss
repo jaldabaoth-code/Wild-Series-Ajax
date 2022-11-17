@@ -1,0 +1,52 @@
+$theme-colors: (
+    "primary": #17a2b8,
+    "secondary": #342234,
+);
+
+@import "~bootstrap/scss/bootstrap";
+
+#searchForm {
+    display: flex;
+    flex-direction: row;
+}
+
+#searchBox {
+    position: relative;
+    margin-right: 1rem;
+}
+
+#autocomplete {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    list-style-type: none;
+    border: grey 1px solid;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    li {
+        &:hover {
+            background-color: rgb(231, 231, 231);
+        }
+
+        a {
+            color: black;
+            padding: 1rem;
+
+            &:hover {
+                text-decoration: none;
+                cursor: default;
+            }
+        }
+    }
+}
+
+#autocomplete:empty {
+    display: none;
+}

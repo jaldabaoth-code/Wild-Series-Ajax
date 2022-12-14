@@ -2,8 +2,9 @@
 {% block title %}Série #{{ program.id }}{% endblock %}
 
 {% block body %}
+        <img class="align-self-start mr-3 w-100" src="{{program.poster}}" alt="{{ program.title }} poster">
     <div class="media">
-        <img class="align-self-start mr-3" src="{{program.poster}}" alt="{{ program.title }} poster">
+
         <div class="media-body">
             <h1 class="mt-0">{{ program.title }}</h1>
             <p>{{ program.summary }}</p>

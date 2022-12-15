@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="{{ path('app_index') }}">
-        <img src="{{ asset("build/images/logo.png") }}" width="32" height="32" class="d-inline-block align-top" alt="" loading="lazy">
+        <img src="{{ asset("build/images/logo.png") }}" width="32" height="32" class="d-inline-block align-top" alt="wild series logo" loading="lazy">
         Wild Series
     </a>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -10,10 +10,10 @@
             </li>
         </ul>
     </div>
-    <form id="searchForm" action="{{ path('program_search') }}" method="get">
+    <form method="GET" id="searchForm" action="{{ path('program_search') }}">
         <div id="searchBox">
-            <input type="text" name="q" id="searchField" autocomplete="off">
-            <ul id="autocomplete"></ul>
+            <input type="text" id="searchField">
+            <ul class="autocomplete" id="autocomplete"></ul>
         </div>
         <button>Chercher</button>
     </form>

@@ -1,20 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}All programs{% endblock %}
+{% block title %}Les séries{% endblock %}
 
 {% block body %}
-    <h1>Toutes les séries </h1>
+    <h1 class="text-center my-5">Toutes les séries</h1>
     {% for program in programs %}
-        <div>
-            <h2>{{ loop.index }} / {{ program.title }}</h2>
-            <p>{{ program.summary }}</p>
-            <a href="{{ path("program_show", { id: program.id }) }}">Voir la fiche</a>
-        </div>
+        <h2>
+            {{ loop.index }} ) <a href="{{ path("program_show", { id: program.id }) }}">{{ program.title }}</a>
+        </h2>
+        <p>{{ program.summary }}</p>
     {% else %}
-        Aucune série trouvée.
+        Aucune série trouvée
     {% endfor %}
-
-    <a href="{{ path('app_index') }}">
-        Retour à l'accueil
-    </a>
 {% endblock %}

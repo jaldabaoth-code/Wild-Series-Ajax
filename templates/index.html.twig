@@ -1,4 +1,5 @@
 {% extends "base.html.twig" %}
+
 {% block body %}
     <div class="container">
 		<h1>Wild Series</h1>
@@ -16,7 +17,7 @@
 						{% for program in programs %}
 							<div class="carousel-item {{ (loop.index == 1) ? 'active' : '' }}" data-bs-interval="5000">
                                 <a href="{{ path("program_show", { id: program.id }) }}">
-                                    <img class="align-self-start mr-3 w-100 h-100" src="{{ program.poster }}" alt="{{ program.title }} poster">
+                                    <img class="align-self-start mr-3 w-100 image" src="{{ program.poster }}" alt="{{ program.title }} poster">
 									<div class="carousel-caption d-none d-md-block bg-dark">
 										<h3>{{ program.title }}</h3>
 										<p>{{ program.summary }}</p>

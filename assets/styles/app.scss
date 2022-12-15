@@ -41,7 +41,7 @@ $theme-colors: (
 
             &:hover {
                 text-decoration: none;
-                cursor: default;
+                cursor: pointer;
             }
         }
     }
@@ -49,4 +49,8 @@ $theme-colors: (
 
 #autocomplete:empty {
     display: none;
+}
+
+.image {
+    height: 600px;
 }

@@ -1,43 +1,38 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-    <div class="container">
-		<h1>Wild Series</h1>
-		<h2>Latest series</h2>
-		<div class="body">
-			{%  if programs == true %}
-				{# Bootsrap carousel #}
-				<div id="carouselDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-					<div class="carousel-indicators">
-						{% for i in 0.. programs|length-1 %}
-							<button type="button" data-bs-target="#carouselDark" data-bs-slide-to="{{ i }}" aria-label="Slide {{ i+1 }}" {{ (i == 0) ? "class='active' aria-current='true'" : "" }}></button>
-						{% endfor %}
-					</div>
-					<div class="carousel-inner">
-						{% for program in programs %}
-							<div class="carousel-item {{ (loop.index == 1) ? 'active' : '' }}" data-bs-interval="5000">
-                                <a href="{{ path("program_show", { id: program.id }) }}">
-                                    <img class="align-self-start mr-3 w-100 image" src="{{ program.poster }}" alt="{{ program.title }} poster">
-									<div class="carousel-caption d-none d-md-block bg-dark">
-										<h3>{{ program.title }}</h3>
-										<p>{{ program.summary }}</p>
-									</div>
-								</a>
+	<h1 class="text-center my-5">Wild Series</h1>
+	{%  if programs == true %}
+		{# Bootsrap carousel #}
+		<div id="carouselDark" class="carousel slide" data-bs-ride="carousel">
+			<div class="carousel-indicators">
+				{% for i in 0.. programs|length-1 %}
+					<button type="button" data-bs-target="#carouselDark" data-bs-slide-to="{{ i }}" aria-label="Slide {{ i+1 }}" {{ (i == 0) ? "class='active' aria-current='true'" : "" }}></button>
+				{% endfor %}
+			</div>
+			<div class="carousel-inner">
+				{% for program in programs %}
+					<div class="carousel-item {{ (loop.index == 1) ? 'active' : '' }}" data-bs-interval="5000">
+						<a href="{{ path("program_show", { id: program.id }) }}">
+							<img class="w-100 image" src="{{ program.poster }}" alt="{{ program.title }} poster">
+							<div class="carousel-caption d-none d-md-block bg-secondary">
+								<h3>{{ program.title }}</h3>
+								<p>{{ program.summary }}</p>
 							</div>
-						{% endfor %}
+						</a>
 					</div>
-					<button class="carousel-control-prev" type="button" data-bs-target="#carouselDark" data-bs-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Previous</span>
-					</button>
-					<button class="carousel-control-next" type="button" data-bs-target="#carouselDark" data-bs-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Next</span>
-					</button>
-				</div>
-			{% else %}
-				<p>No series on site currently</p>
-			{% endif %}
+				{% endfor %}
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselDark" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselDark" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
 		</div>
-	</div>
+	{% else %}
+		<p>No program on site, currently</p>
+	{% endif %}
 {% endblock %}

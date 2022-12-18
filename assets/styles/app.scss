@@ -5,30 +5,24 @@ $theme-colors: (
 
 @import "~bootstrap/scss/bootstrap";
 
-#searchForm {
+.search-form {
     display: flex;
     flex-direction: row;
 }
 
-#searchBox {
+.search-box {
     position: relative;
     margin-right: 1rem;
 }
 
-#autocomplete {
+.autocomplete {
     position: absolute;
-    top: 100%;
-    right: 0;
-    margin: 0;
     padding: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: white;
     list-style-type: none;
-    border: grey 1px solid;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border: #808080 1px solid;
 
     li {
         &:hover {
@@ -36,8 +30,7 @@ $theme-colors: (
         }
 
         a {
-            color: black;
-            padding: 1rem;
+            color: #000000;
 
             &:hover {
                 text-decoration: none;

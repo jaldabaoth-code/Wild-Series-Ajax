@@ -6,7 +6,7 @@ document.getElementById('searchField').addEventListener('input', function(event)
     // If query is not empty, do stuff
     if (query !== '') {
         // Fetch data from ProgramController::autocomplete()
-        fetch('/programs/autocomplete?q=' + query, {method: 'GET'})
+        fetch('/programs/autocomplete?q=' + query, { method: 'GET' })
             // Get response body in json format
             .then(response => response.json())
             // Manipulate data as we wish

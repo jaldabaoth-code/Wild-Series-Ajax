@@ -1,3 +1,25 @@
+<h1>Wild Series Ajax (Symfony Workshop, WCS Web PHP)</h1>
+
+### There are "Symfony Workshop" we did during WCS Web PHP
+
+---
+
+### Steps
+
+1. Clone the repo from GitHub : `git@github.com:jaldabaoth-code/Wild-Series-Ajax.git`
+2. Enter the directory : `cd Wild-Series-Ajax`
+3. Open with your code editor
+4. Run `composer install` to install PHP dependencies
+5. Run `yarn install` to install JS dependencies
+6. Run `cp .env .env.local` and configure your `DATABASE_URL`
+7. Run `symfony console doctrine:database:create` to create database
+8. Run `symfony console doctrine:migration:migrate` to create structure of database
+9. Run `symfony console doctrine:fixtures:load` to load the fixtures in database
+10. Run `yarn encore dev` to build assets
+11. Run `symfony server:start` to launch symfony server
+12. Go to <b>localhost:8000</b> with your favorite browser
+
+
 # Autocomplete with AJAX
 
 To run the project, first make a `.env.local` file with the configuration of your database, then:

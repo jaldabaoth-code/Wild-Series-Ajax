@@ -3,6 +3,7 @@
 ### There are "Symfony Workshop" we did during WCS Web PHP
 
 ---
+
 ### Description
 
 You can see a search input inside the navigation bar, it works well, but you can improve it with autocomplete.
